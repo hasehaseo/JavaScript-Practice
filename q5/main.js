@@ -1,26 +1,26 @@
 'use strict'
-/* global fail print fail */
+/* global fail output fail */
 const array = [0, 20, 31, 42, 13, 5, 99, 38, 67, -1]
 main()
 
 function main() {
-  print('origin', array.toString())
-  print('sum', sum(array))
-  print('avg', avg(array))
-  print('max', max(array))
-  print('min', min(array))
+  output('origin', array.toString())
+  output('sum', sum(array))
+  output('avg', avg(array))
+  output('max', max(array))
+  output('min', min(array))
   const rsortAsc = rsort(array.slice())
   const rsortDsc = rsort(array.slice(), function(a, b) {
     return b - a
   })
   const bsortAsc = bsort(array.slice())
-  print('bubble sort asc', bsortAsc)
+  output('bubble sort asc', bsortAsc.toString())
   const bsortDsc = bsort(array.slice(), desc)
-  print('bubble sort desc', bsortDsc)
+  output('bubble sort desc', bsortDsc.toString())
   const qsortAsc = qsort(array.slice())
-  print('quick sort asc', qsortAsc)
+  output('quick sort asc', qsortAsc.toString())
   const qsortDsc = qsort(array.slice(), desc)
-  print('quick sort desc', qsortDsc)
+  output('quick sort desc', qsortDsc.toString())
 
   // test
   compareArray('bubble sort asc', rsortAsc, bsortAsc)
@@ -129,8 +129,7 @@ function lower(num1, num2) {
  * @param {Function} func 集計方法
  */
 function group(array, func) {
-  if (array.length === 1) return array[0]
-  return func(array[0], group(array.slice(1), func))
+  return array.length === 1 ? array[0] : func(array[0], group(array.slice(1), func))
 }
 /**
  * bubble sort.

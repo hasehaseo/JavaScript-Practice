@@ -1,5 +1,5 @@
 'use strict'
-/* global inputWithCheck getRandomInt print */
+/* global inputWithCheck getRandomInt output */
 /**
  * じゃんけんの取り決め定義
  */
@@ -27,7 +27,7 @@ const KAKEGOE = 'じゃんけんします。\n0.グー 1.チョキ 2.パー'
 try {
   main()
 } catch (error) {
-  print(error.message)
+  output(error.message)
 }
 
 function main() {
@@ -38,19 +38,19 @@ function main() {
   )
   const cp = getRandomInt(3)
 
-  print('ぽい！')
-  print('コンピュータ：' + JANKEN.kind[cp])
-  print('あなた：' + JANKEN.kind[player])
+  output('ぽい！')
+  output('コンピュータ：' + JANKEN.kind[cp])
+  output('あなた：' + JANKEN.kind[player])
 
   switch (JANKEN.compareTo(player, cp)) {
     case JANKEN.status.WIN:
-      print('あなたの勝ち！')
+      output('あなたの勝ち！')
       break
     case JANKEN.status.LOSE:
-      print('あなたの負け！')
+      output('あなたの負け！')
       break
     default:
-      print('アイコでしょ！')
+      output('アイコでしょ！')
       main()
   }
 }

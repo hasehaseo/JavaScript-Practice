@@ -1,9 +1,9 @@
 'use strict'
-/* global inputWithCheck print */
+/* global inputWithCheck output */
 try {
   main()
 } catch (error) {
-  print(error.message)
+  output(error.message)
 }
 
 function main() {
@@ -14,7 +14,7 @@ function main() {
   for (let i = 1; i <= input; i++) {
     result.push(judge(i))
   }
-  print(result)
+  output(result.toString())
 }
 /**
  * Fizz、Buzzを判断します。
@@ -33,11 +33,8 @@ function judge(num) {
    * @param {String} ret 判定結果
    */
   const fizzBuzz = function(num, base, ret) {
-    if (num % base === 0) {
-      return ret
-    }
-    return ''
+    return num % base ? '' : ret // 0はfalse
   }
   const result = '' + fizzBuzz(num, 3, 'Fizz') + fizzBuzz(num, 5, 'Buzz')
-  return result.length === 0 ? num : result
+  return result || num
 }

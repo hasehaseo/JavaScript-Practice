@@ -1,11 +1,11 @@
 'use strict'
-/* global print */
+/* global output */
 const SEARCH_WORD = 'foo'
 const REPLACE_WORD = 'uryyyy!!'
 try {
   main()
 } catch (error) {
-  print(error.message)
+  output(error.message)
 }
 
 // const hash = { text: 'foo' }
@@ -34,8 +34,8 @@ function main() {
   const objectToString = function(obj) {
     return JSON.stringify(obj, null, '  ')
   }
-  print('hash', objectToString(hash))
-  print('toUry', objectToString(toUry(hash)))
+  output('hash', objectToString(hash))
+  output('toUry', objectToString(toUry(hash)))
 }
 
 /**
@@ -57,6 +57,5 @@ function toUry(hash) {
  * @param {String} str 対象文字列
  */
 function replaceWord(str) {
-  if (str.indexOf(SEARCH_WORD) < 0) return str
-  return replaceWord(str.replace(SEARCH_WORD, REPLACE_WORD))
+  return str.indexOf(SEARCH_WORD) < 0 ? str : replaceWord(str.replace(SEARCH_WORD, REPLACE_WORD))
 }

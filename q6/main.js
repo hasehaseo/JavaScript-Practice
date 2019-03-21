@@ -1,5 +1,5 @@
 'use strict'
-/* global getRandomInt inputWithCheck */
+/* global getRandomInt inputWithCheck output */
 const startMessage = '0-100で数字を当てて'
 const higherMessage = 'もっと上'
 const lowerMessage = 'もっと下'
@@ -9,10 +9,10 @@ function main() {
   const base = getRandomInt(100)
   try {
     const count = executeHiAndLow(base)
-    print('正解です', '入力回数：', count)
+    output('正解です', '入力回数：', count)
   } catch (e) {
-    print(e.message)
-    print('答えは[' + base + ']でした')
+    output(e.message)
+    output('答えは[' + base + ']でした')
   }
 }
 /**

@@ -1,5 +1,5 @@
 'use strict'
-/* global inputWithCheck getRandomInt print */
+/* global inputWithCheck getRandomInt output */
 
 const MATERIAL_NUMBERS = ['0', '1', '2', '3', '4', '5', '6', '7', '9']
 const LENGTH = 4
@@ -9,10 +9,10 @@ function main() {
   const base = getRandomNumbers(LENGTH)
   try {
     const count = hitAndBlow(base)
-    print(count + ' 回で正解!')
+    output(count + ' 回で正解!')
   } catch (e) {
-    print(e.message)
-    print('正解は' + base.toString() + 'でした')
+    output(e.message)
+    output('正解は' + base.toString() + 'でした')
   }
 }
 /**
@@ -23,11 +23,11 @@ function hitAndBlow(base, count = 0) {
   const input = inputWithCheck(MESSAGE, function(input) {
     return !isNaN(input) && LENGTH === input.length
   })
-  print(input)
+  output(input)
   const result = checkHitAndBlow(base, input)
   count++
   if (LENGTH !== result.hit) {
-    print('外れ：' + result.hit + ' Hit, ' + result.blow + ' Blow')
+    output('外れ：' + result.hit + ' Hit, ' + result.blow + ' Blow')
     return hitAndBlow(base, count)
   }
   return count

@@ -1,14 +1,25 @@
 /* eslint-disable no-unused-vars */
 'use strict'
 
+/**
+ * 入力させる。
+ * @param {String} message 入力を促すメッセージ
+ */
 function input(message) {
   const input = window.prompt(message)
-  print(message)
-  print('入力：' + input)
+  output(message)
+  output('入力：' + input)
   return input
 }
-function print(...contents) {
-  console.log(contents.join(' '))
+/**
+ * 出力する。
+ * 引数が1つの場合、そのまま出力
+ * 引数が複数の場合、スペース区切りで出力
+ * @param  {...any} contents 出力対象
+ */
+function output(...contents) {
+  const str = contents.length === 1 ? contents : contents.join()
+  console.log(str)
 }
 /**
  * 入力チェック付き入力支援
@@ -37,7 +48,7 @@ function inputWithCheck(
  * @param {*} actual
  */
 function fail(name, expect, actual) {
-  print(name + ' error!', 'expect', expect, 'actual', actual)
+  output(name + ' error!', 'expect', expect, 'actual', actual)
 }
 /**
  * get random int
