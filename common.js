@@ -18,7 +18,7 @@ function input(message) {
  * @param  {...any} contents 出力対象
  */
 function output(...contents) {
-  const str = contents.length === 1 ? contents : contents.join()
+  const str = contents.length === 1 ? contents[0] : contents.join(' ')
   console.log(str)
 }
 /**

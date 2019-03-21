@@ -2,11 +2,6 @@
 /* global output */
 const SEARCH_WORD = 'foo'
 const REPLACE_WORD = 'uryyyy!!'
-try {
-  main()
-} catch (error) {
-  output(error.message)
-}
 
 // const hash = { text: 'foo' }
 // const hash = {
@@ -29,6 +24,11 @@ const hash = {
   },
   text: 'foofava',
   foo: '外れ',
+}
+try {
+  main()
+} catch (error) {
+  output(error.message)
 }
 function main() {
   const objectToString = function(obj) {
