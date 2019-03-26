@@ -57,3 +57,11 @@ function fail(name, expect, actual) {
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max))
 }
+
+/**
+ * 10進数整数に変換する
+ * @param {String} str 変換対象
+ */
+function parseIntRadix10(str) {
+  return parseInt(str, 10)
+}

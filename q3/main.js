@@ -1,5 +1,5 @@
 'use strict'
-/* global inputWithCheck getRandomInt output */
+/* global inputWithCheck getRandomInt output parseIntRadix10 */
 /**
  * じゃんけんの取り決め定義
  */
@@ -31,7 +31,7 @@ try {
 }
 
 function main() {
-  const player = parseInt(
+  const player = parseIntRadix10(
     inputWithCheck(KAKEGOE, function(str) {
       return JANKEN.kind[str]
     })

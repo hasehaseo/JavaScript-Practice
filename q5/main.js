@@ -1,5 +1,5 @@
 'use strict'
-/* global fail output fail */
+/* global fail output fail parseIntRadix10 */
 const array = [0, 20, 31, 42, 13, 5, 99, 38, 67, -1]
 main()
 
@@ -189,7 +189,7 @@ function desc(a, b) {
 function rsort(
   array,
   rule = function(a, b) {
-    return parseInt(a) - parseInt(b)
+    return parseIntRadix10(a) - parseIntRadix10(b)
   }
 ) {
   return array.sort(rule)
