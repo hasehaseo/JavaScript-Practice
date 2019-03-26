@@ -20,7 +20,11 @@ function countWord(input) {
   const words = input.split(/\s+/)
   for (const word of words) {
     // あれば、カウントアップ／なければ、初期化
-    result[word] ? result[word]++ : (result[word] = 1)
+    if (result[word]) {
+      result[word]++
+    } else {
+      result[word] = 1
+    }
   }
   return result
 }
