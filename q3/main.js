@@ -14,11 +14,16 @@ const janken = {
     LOSE: -1,
     DRAW: 0,
   },
-  compareTo: function(m1, m2) {
-    if (m1 === m2) return this.status.DRAW
-    if (m1 === 0 && m2 === 1) return this.status.WIN
-    if (m1 === 1 && m2 === 2) return this.status.WIN
-    if (m1 === 2 && m2 === 0) return this.status.WIN
+  /**
+   * じゃんけん手の勝ち負けを判断する。
+   * @param {Number} player 自分の手
+   * @param {Number} rival 相手の手
+   */
+  compareTo: function(player, rival) {
+    if (player === rival) return this.status.DRAW
+    if (player === 0 && rival === 1) return this.status.WIN
+    if (player === 1 && rival === 2) return this.status.WIN
+    if (player === 2 && rival === 0) return this.status.WIN
     return this.status.LOSE
   },
 }
