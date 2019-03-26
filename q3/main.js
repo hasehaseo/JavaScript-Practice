@@ -3,7 +3,7 @@
 /**
  * じゃんけんの取り決め定義
  */
-const JANKEN = {
+const janken = {
   kind: {
     0: 'グー',
     1: 'チョキ',
@@ -33,20 +33,20 @@ try {
 function main() {
   const player = parseIntRadix10(
     inputWithCheck(KAKEGOE, function(str) {
-      return JANKEN.kind[str]
+      return janken.kind[str]
     })
   )
   const cp = getRandomInt(3)
 
   output('ぽい！')
-  output('コンピュータ：' + JANKEN.kind[cp])
-  output('あなた：' + JANKEN.kind[player])
+  output('コンピュータ：' + janken.kind[cp])
+  output('あなた：' + janken.kind[player])
 
-  switch (JANKEN.compareTo(player, cp)) {
-    case JANKEN.status.WIN:
+  switch (janken.compareTo(player, cp)) {
+    case janken.status.WIN:
       output('あなたの勝ち！')
       break
-    case JANKEN.status.LOSE:
+    case janken.status.LOSE:
       output('あなたの負け！')
       break
     default:

@@ -1,25 +1,25 @@
 'use strict'
 /* global fail output fail parseIntRadix10 */
-const array = [0, 20, 31, 42, 13, 5, 99, 38, 67, -1]
+const MODEL_ARRAY = [0, 20, 31, 42, 13, 5, 99, 38, 67, -1]
 main()
 
 function main() {
-  output('origin', array.toString())
-  output('sum', sum(array))
-  output('avg', avg(array))
-  output('max', max(array))
-  output('min', min(array))
-  const rsortAsc = rsort(array.slice())
-  const rsortDsc = rsort(array.slice(), function(a, b) {
+  output('origin', MODEL_ARRAY.toString())
+  output('sum', sum(MODEL_ARRAY))
+  output('avg', avg(MODEL_ARRAY))
+  output('max', max(MODEL_ARRAY))
+  output('min', min(MODEL_ARRAY))
+  const rsortAsc = rsort(MODEL_ARRAY.slice())
+  const rsortDsc = rsort(MODEL_ARRAY.slice(), function(a, b) {
     return b - a
   })
-  const bsortAsc = bsort(array.slice())
+  const bsortAsc = bsort(MODEL_ARRAY.slice())
   output('bubble sort asc', bsortAsc.toString())
-  const bsortDsc = bsort(array.slice(), desc)
+  const bsortDsc = bsort(MODEL_ARRAY.slice(), desc)
   output('bubble sort desc', bsortDsc.toString())
-  const qsortAsc = qsort(array.slice())
+  const qsortAsc = qsort(MODEL_ARRAY.slice())
   output('quick sort asc', qsortAsc.toString())
-  const qsortDsc = qsort(array.slice(), desc)
+  const qsortDsc = qsort(MODEL_ARRAY.slice(), desc)
   output('quick sort desc', qsortDsc.toString())
 
   // test

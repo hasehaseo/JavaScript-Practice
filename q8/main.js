@@ -10,7 +10,7 @@ const REPLACE_WORD = 'uryyyy!!'
 //     second: { text: 'fizzbuzzfoo', child: { text: 'foobar' } },
 //   },
 // }
-const hash = {
+const MODEL_HASH = {
   main: {
     first: { text: 'foobar' },
     second: { text: 'fizzbuzz', child: { text: 'foobar' } },
@@ -34,8 +34,8 @@ function main() {
   const objectToString = function(obj) {
     return JSON.stringify(obj, null, '  ')
   }
-  output('hash', objectToString(hash))
-  output('toUry', objectToString(toUry(hash)))
+  output('hash', objectToString(MODEL_HASH))
+  output('toUry', objectToString(toUry(MODEL_HASH)))
 }
 
 /**

@@ -1,8 +1,8 @@
 'use strict'
 /* global getRandomInt inputWithCheck output */
-const startMessage = '0-100で数字を当てて'
-const higherMessage = 'もっと上'
-const lowerMessage = 'もっと下'
+const START_MESSAGE = '0-100で数字を当てて'
+const HIGHER_MESSAGE = 'もっと上'
+const LOWER_MESSAGE = 'もっと下'
 main()
 
 function main() {
@@ -23,7 +23,7 @@ function main() {
  * @param {String} message 入力を促すメッセージ
  * @param {Number} count 回答回数
  */
-function executeHiAndLow(base, message = startMessage, count = 0) {
+function executeHiAndLow(base, message = START_MESSAGE, count = 0) {
   if (message.length === 0) return count
   const num = inputWithCheck(message, function(input) {
     return !isNaN(input)
@@ -31,9 +31,9 @@ function executeHiAndLow(base, message = startMessage, count = 0) {
   count++
   let nextMessage = ''
   if (base > num) {
-    nextMessage = higherMessage
+    nextMessage = HIGHER_MESSAGE
   } else if (base < num) {
-    nextMessage = lowerMessage
+    nextMessage = LOWER_MESSAGE
   }
   return executeHiAndLow(base, nextMessage, count)
 }
