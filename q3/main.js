@@ -41,13 +41,13 @@ function main() {
       return janken.kind[str]
     })
   )
-  const cp = getRandomInt(3)
+  const rival = getRandomInt(3)
 
   output('ぽい！')
-  output('コンピュータ：' + janken.kind[cp])
+  output('コンピュータ：' + janken.kind[rival])
   output('あなた：' + janken.kind[player])
 
-  switch (janken.compareTo(player, cp)) {
+  switch (janken.compareTo(player, rival)) {
     case janken.status.WIN:
       output('あなたの勝ち！')
       break
