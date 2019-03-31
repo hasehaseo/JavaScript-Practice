@@ -47,8 +47,8 @@ function inputWithCheck(
  * @param {*} expect
  * @param {*} actual
  */
-function fail(name, expect, actual) {
-  output(name + ' error!', 'expect', expect, 'actual', actual)
+function fail(name, expected, actual) {
+  output(`${name} is error! expect:${expected} actual:${actual}`)
 }
 /**
  * get random int
