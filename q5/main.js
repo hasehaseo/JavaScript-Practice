@@ -1,9 +1,9 @@
 'use strict'
 /* global fail output fail parseIntRadix10 */
-const MODEL_ARRAY = [0, 20, 31, 42, 13, 5, 99, 38, 67, -1]
+const MODEL_ARRAY = [20, 31, 42, 13, 5, 38]
 main()
 
-function main() {
+function main(array = MODEL_ARRAY) {
   output('origin', MODEL_ARRAY.toString())
   output('sum', sum(MODEL_ARRAY))
   output('avg', avg(MODEL_ARRAY))
