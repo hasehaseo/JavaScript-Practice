@@ -50,13 +50,15 @@ function sum(array) {
 /**
  * 指定の要素を入れ替える
  * @param {Array} array
- * @param {*} n 配列の要素番号
  * @param {*} m 配列の要素番号
+ * @param {*} n 配列の要素番号
  */
-function replace(array, n, m) {
-  const tmp = array[n]
-  array[n] = array[m]
-  array[m] = tmp
+function swap(array, m, n) {
+  // const tmp = array[m]
+  // array[m] = array[n]
+  // array[n] = tmp
+
+  ;[array[m], array[n]] = [array[n], array[m]]
 }
 /**
  * 和を返却する
@@ -102,7 +104,7 @@ function bsort(array, compare = asc) {
   for (let i = 0; i < array.length - 1; i++) {
     for (let j = 0; j < array.length - 1 - i; j++) {
       if (compare(array[j], array[j + 1])) {
-        replace(array, j, j + 1)
+        swap(array, j, j + 1)
       }
     }
   }
