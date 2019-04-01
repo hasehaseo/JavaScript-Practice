@@ -65,3 +65,17 @@ function getRandomInt(max) {
 function parseIntRadix10(str) {
   return parseInt(str, 10)
 }
+
+/**
+ * 配列を比較し、不一致の場合、failを出力する。
+ * @param {String} name 対象項目
+ * @param {Array} expected 期待結果
+ * @param {Array} actual 実際
+ */
+function compareArray(name, expected, actual) {
+  const expectedJson = JSON.stringify(expected).toString()
+  const actualJson = JSON.stringify(actual).toString()
+  if (expectedJson !== actualJson) {
+    fail(name, expected, actual)
+  }
+}
