@@ -39,7 +39,7 @@ function hitAndBlow(base, count = 0) {
  */
 function getRandomNumbers(len, str = '') {
   if (len === str.length) return str
-  const elementNumber = getRandomInt(9 - str.length)
+  const elementNumber = getRandomInt(10 - str.length)
   str += MATERIAL_NUMBERS.splice(elementNumber, 1)[0]
   return getRandomNumbers(len, str)
 }

@@ -52,7 +52,7 @@ function fail(name, expected, actual) {
 }
 /**
  * get random int.
- * 0 < max の整数を返却する。
+ * 0 以上 max 未満の整数を返却する。
  * @param {Number} max 上限
  */
 function getRandomInt(max) {
