@@ -9,10 +9,10 @@ function main() {
   const base = getRandomNumbers(LENGTH)
   try {
     const count = hitAndBlow(base)
-    output(count + ' 回で正解!')
+    output(`${count} 回で正解!`)
   } catch (e) {
     output(e.message)
-    output('正解は' + base.toString() + 'でした')
+    output(`正解は[${base}]でした`)
   }
 }
 /**
@@ -27,7 +27,7 @@ function hitAndBlow(base, count = 0) {
   const result = checkHitAndBlow(base, input)
   count++
   if (LENGTH !== result.hit) {
-    output('外れ：' + result.hit + ' Hit, ' + result.blow + ' Blow')
+    output(`外れ：${result.hit} Hit, ${result.blow} Blow`)
     return hitAndBlow(base, count)
   }
   return count

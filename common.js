@@ -8,7 +8,7 @@
 function input(message) {
   const input = window.prompt(message)
   output(message)
-  output('入力：' + input)
+  output(`入力：${input}`)
   return input
 }
 /**

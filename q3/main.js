@@ -44,8 +44,8 @@ function main() {
   const rival = getRandomInt(3)
 
   output('ぽい！')
-  output('コンピュータ：' + janken.kind[rival])
-  output('あなた：' + janken.kind[player])
+  output(`コンピュータ：${janken.kind[rival]}`)
+  output(`あなた：${janken.kind[player]}`)
 
   switch (janken.compareTo(player, rival)) {
     case janken.status.WIN:

@@ -9,10 +9,10 @@ function main() {
   const base = getRandomInt(100)
   try {
     const count = executeHiAndLow(base)
-    output('正解です', '入力回数：', count)
+    output(`正解です 入力回数：${count}`)
   } catch (e) {
     output(e.message)
-    output('答えは[' + base + ']でした')
+    output(`答えは[${base}]でした`)
   }
 }
 /**

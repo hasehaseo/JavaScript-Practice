@@ -34,8 +34,8 @@ function main() {
   const objectToString = function(obj) {
     return JSON.stringify(obj, null, '  ')
   }
-  output('hash', objectToString(MODEL_HASH))
-  output('toUry', objectToString(toUry(MODEL_HASH)))
+  output(`hash ${objectToString(MODEL_HASH)}`)
+  output(`toUry ${objectToString(toUry(MODEL_HASH))}`)
 }
 
 /**
