@@ -26,7 +26,7 @@ function hitAndBlow(base) {
     const input = inputWithCheck(MESSAGE, function(input) {
       return !isNaN(input) && base.length === input.length
     })
-    result = checkHitAndBlow(base, input)
+    result = countHitAndBlow(base, input)
     if (base.length !== result.hit) {
       output(`外れ：${result.hit} Hit, ${result.blow} Blow`)
     }
@@ -46,13 +46,13 @@ function getRandomNumbers(len, str = '') {
   return getRandomNumbers(len, str)
 }
 /**
- * 基準と入力が一致することをチェックする。
+ * hitとblowの件数を返却する。
  * 場所が一致する場合、hitをカウントアップ
  * 文字を含んでいる場合、blowをカウントアップ
  * @param {String} base 基準
  * @param {String} input 入力
  */
-function checkHitAndBlow(base, input) {
+function countHitAndBlow(base, input) {
   const result = { hit: 0, blow: 0 }
   for (let i = 0; i < input.length; i++) {
     const c = input.charAt(i)
