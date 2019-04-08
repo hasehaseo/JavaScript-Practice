@@ -3,7 +3,7 @@
 
 const MATERIAL_NUMBERS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 const LENGTH = 4
-const MESSAGE = '4桁の数字は？'
+const MESSAGE = `${LENGTH}桁の数字は？`
 main()
 function main() {
   const base = getRandomNumbers(LENGTH)
