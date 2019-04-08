@@ -51,7 +51,8 @@ function fail(name, expected, actual) {
   output(`${name} is error! expect:${expected} actual:${actual}`)
 }
 /**
- * get random int
+ * get random int.
+ * 0 < max の整数を返却する。
  * @param {Number} max 上限
  */
 function getRandomInt(max) {

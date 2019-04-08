@@ -6,7 +6,7 @@ const LOWER_MESSAGE = 'もっと下'
 main()
 
 function main() {
-  const base = getRandomInt(100)
+  const base = getRandomInt(101)
   try {
     const count = executeHiAndLow(base)
     output(`正解です 入力回数：${count}`)
