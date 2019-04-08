@@ -33,13 +33,13 @@ function hitAndBlow(base, count = 0) {
   return count
 }
 /**
- * 指定した桁数の数値を格納した配列（各桁の数値は重複しない）
+ * 指定した桁数の数字文字列（各桁の数値は重複しない）
  * @param {Number} len 指定桁数
- * @param {String} str 配列
+ * @param {String} str ランダムな数字文字列
  */
 function getRandomNumbers(len, str = '') {
   if (len === str.length) return str
-  const elementNumber = getRandomInt(10 - str.length)
+  const elementNumber = getRandomInt(MATERIAL_NUMBERS.length)
   str += MATERIAL_NUMBERS.splice(elementNumber, 1)[0]
   return getRandomNumbers(len, str)
 }
