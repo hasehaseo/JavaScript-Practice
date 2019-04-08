@@ -16,19 +16,21 @@ function main() {
   }
 }
 /**
+ * 基準と一致するまで、繰り返す。
  * @param {String} base 基準
- * @param {Number} count 試行回数
  */
-function hitAndBlow(base, count = 0) {
-  const input = inputWithCheck(MESSAGE, function(input) {
-    return !isNaN(input) && LENGTH === input.length
-  })
-  output(input)
-  const result = checkHitAndBlow(base, input)
-  count++
-  if (LENGTH !== result.hit) {
-    output(`外れ：${result.hit} Hit, ${result.blow} Blow`)
-    return hitAndBlow(base, count)
+function hitAndBlow(base) {
+  let count = 0,
+    result = { hit: 0, blow: 0 }
+  while (result.hit < base.length) {
+    const input = inputWithCheck(MESSAGE, function(input) {
+      return !isNaN(input) && base.length === input.length
+    })
+    result = checkHitAndBlow(base, input)
+    if (base.length !== result.hit) {
+      output(`外れ：${result.hit} Hit, ${result.blow} Blow`)
+    }
+    count++
   }
   return count
 }
