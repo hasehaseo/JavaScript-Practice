@@ -1,6 +1,6 @@
 'use strict'
 /* global output */
-const SEARCH_WORD = 'foo'
+const SEARCH_WORD = /foo/g
 const REPLACE_WORD = 'uryyyy!!'
 
 // const hash = { text: 'foo' }
@@ -46,16 +46,9 @@ function toUry(hash) {
   if (!hash || typeof hash !== 'object') return hash
   for (const key of Object.keys(hash)) {
     if (hash['text']) {
-      hash['text'] = replaceWord(hash['text'])
+      hash['text'] = hash['text'].replace(SEARCH_WORD, REPLACE_WORD)
     }
     toUry(hash[key])
   }
   return hash
-}
-/**
- * 対象文字列に含まれるすべての SEARCH_WORD を REPLACE_WORD に置換する
- * @param {String} str 対象文字列
- */
-function replaceWord(str) {
-  return str.indexOf(SEARCH_WORD) < 0 ? str : replaceWord(str.replace(SEARCH_WORD, REPLACE_WORD))
 }
