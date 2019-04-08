@@ -45,8 +45,8 @@ function main() {
 function toUry(hash) {
   if (!hash || typeof hash !== 'object') return hash
   for (const key of Object.keys(hash)) {
-    if (hash['text']) {
-      hash['text'] = hash['text'].replace(SEARCH_WORD, REPLACE_WORD)
+    if (hash.text) {
+      hash.text = hash.text.replace(SEARCH_WORD, REPLACE_WORD)
     }
     toUry(hash[key])
   }
