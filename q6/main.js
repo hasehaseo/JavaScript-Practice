@@ -28,12 +28,11 @@ function executeHiAndLow(base, message = START_MESSAGE, count = 0) {
   const num = inputWithCheck(message, function(input) {
     return !isNaN(input)
   })
-  count++
   let nextMessage = ''
   if (base > num) {
     nextMessage = HIGHER_MESSAGE
   } else if (base < num) {
     nextMessage = LOWER_MESSAGE
   }
-  return executeHiAndLow(base, nextMessage, count)
+  return executeHiAndLow(base, nextMessage, count + 1)
 }
