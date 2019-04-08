@@ -1,7 +1,7 @@
 'use strict'
 /* global inputWithCheck getRandomInt output */
 
-const MATERIAL_NUMBERS = ['0', '1', '2', '3', '4', '5', '6', '7', '9']
+const MATERIAL_NUMBERS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 const LENGTH = 4
 const MESSAGE = '4桁の数字は？'
 main()
